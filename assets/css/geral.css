@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'icones';
+    src: url(../font/icones.ttf);
+}
+body{
+    background: linear-gradient(#628E75, #1A4855 );
+    font-family: 'Poppins', icones, sans-serif;
+    box-sizing: border-box;
+}
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 5rem 0 6rem;
+}
+.cabecalho__redesSociais{
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+/* INICIAL */
+.inicial{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 68px);
+}
+/* INICIAL TEXTOS LATERAL ESQUERDA */
+.inicial__textos{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 6rem;
+    width: 40vw;
+    box-sizing: border-box;
+}
+.inicial__textos--h3{
+    color: #F9F9F9;
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+.inicial__textos--h1{
+    color: #F9F9F9;
+    font-size: 4rem;
+    font-weight: 700;
+}
+.inicial__textos--p{
+    color: #F9F9F9;
+    font-weight: 300;
+    line-height: 2rem;
+}
+/* BOTOES */
+.inicial__textos--botoes{
+    display: flex;
+    gap: 1.5rem;
+    color: white;
+}
+.inicial__textos--botoes-assistirAgora{
+    background: #628E75;
+    width: 25vw;
+    height: 3rem;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 2rem;
+    transition: 1s all;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicial__textos--botoes-assistirAgora::before{
+    content: '\e90b';
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.inicial__textos--botoes-assistirAgora:hover{
+    background: none;
+    transition: 1s all;
+    box-shadow: 2px 2px 2rem;
+}
+.inicial__textos--botoes-assistirTrailer{
+    width: 25vw;
+    border: 1px solid white;
+    height: 3rem;
+    text-align: center;
+    line-height: 2rem;
+    transition: 1s all;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicial__textos--botoes-assistirTrailer:hover{
+    background-color: #628E75;
+    transition: 1s all;
+    box-shadow: 2px 2px 2rem;
+}
+
+@keyframes movientoFantasmas__Inicio{
+   from{position: relative; left: 0rem;}
+    to{position: relative; right: 1rem;}
+}
+.inicial__imagem{
+    position: relative;
+    right: 0;
+    animation: movientoFantasmas__Inicio 1s infinite alternate;
+}
+
+@media (max-width: 860px){
+    .cabecalho{
+        margin: 1rem 2rem;
+        align-items: flex-end;
+    }
+    .inicial{
+        flex-direction: column-reverse;
+        width: 100vw;
+
+    }
+    .inicial__textos{
+        width: 100vw;
+        padding: 1rem;
+        margin: 0;
+    }
+    .inicial__textos--botoes-assistirTrailer{
+        display: none;
+    }
+    .inicial__imagem{
+        overflow: hidden;
+        animation: none;
+        width: 100vw;
+    }
+    .inicial__textos--h1{
+        font-size: 3.8rem;
+    }
+    .inicial__textos--p{
+        width: 90vw;
+    }
+    .inicial__textos--botoes-assistirAgora{
+        width: 40vw;
+    }
+}
